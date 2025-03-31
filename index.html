@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #231709;
+            color: #000000;
+        }
+
+        .container {
+            background-color: #BC9E82;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2em; /* Adjust this size to match the original h1 size */
+        }
+
+        .button-74 {
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 4px 4px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 15px 40px;
+            line-height: normal;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button-74:hover {
+            background-color: #fff;
+        }
+
+        .button-74:active {
+            box-shadow: #422800 2px 2px 0 0;
+            transform: translate(2px, 2px);
+        }
+
+        /* Copy link button styling */
+        #copyLinkButton {
+            position: absolute; /* Position it in the corner */
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove border */
+            background-color: #F5F5DC; /* Set background color */
+            border-radius: 15px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 16px; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font type */
+            color: #422800; /* Text color */
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center icon and text vertically */
+        }
+
+        #copyLinkButton .fas {
+            color: black !important; /* Set the icon color to black */
+            margin-right: 8px; /* Space between icon and text */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>My Previous Work</h2>
+    <button class="button-74" onclick="window.location.href='Advanced-predictive-analysis.html'">Data Analysis Research</button>
+    <button class="button-74" onclick="window.location.href='SDG 4 & 8.html'">Data Analysis Visualisations: Sample 1</button>
+    <button class="button-74" onclick="window.location.href='SDG 3.html'">Data Analysis Visualisations: Sample 2</button>
+</div>
+
+<button id="copyLinkButton" title="Copy Website Link">
+    <i class="fas fa-clipboard"></i> COPY WEBSITE LINK
+</button>
+
+<script>
+    document.getElementById('copyLinkButton').addEventListener('click', function() {
+        // Create a temporary input element
+        const tempInput = document.createElement('input');
+        // Set its value to the current page URL
+        tempInput.value = window.location.href;
+        // Append it to the body
+        document.body.appendChild(tempInput);
+        // Select the input value
+        tempInput.select();
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
+    });
+</script>
+
+</body>
+</html>
